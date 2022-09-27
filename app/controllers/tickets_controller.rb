@@ -12,6 +12,7 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = @project.tickets.build(ticket_params)
+    @author = current_user
 
     if @ticket.save
       render json: @ticket, status: :created, location: [ @project, @ticket ]
