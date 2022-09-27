@@ -4,7 +4,7 @@ RSpec.describe "Projects", type: :request do
   describe "POST /create" do
     context "with valid parameters" do
       it "returns status code created" do
-        post "/projects", params: {
+        post "/admin/projects", params: {
           project: {
             name: "Ticketer rails angular",
             description: "Ticket tracker in rails and angular"
@@ -17,7 +17,7 @@ RSpec.describe "Projects", type: :request do
 
     context "with invalid parameters" do
       it "returns status code unprocessable entity" do
-        post "/projects", params: {
+        post "/admin/projects", params: {
           project: {
             name: "",
             description: ""

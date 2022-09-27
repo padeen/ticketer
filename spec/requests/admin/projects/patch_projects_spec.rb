@@ -8,7 +8,7 @@ RSpec.describe "Projects", type: :request do
 
     context "with valid parameters" do
       it "returns status code success" do
-        patch "/projects/1", params: {
+        patch "/admin/projects/1", params: {
           project: {
             name: "Ticketer rails angular updated",
             description: "Ticket tracker in rails and angular updated"
@@ -21,7 +21,7 @@ RSpec.describe "Projects", type: :request do
 
     context "with invalid parameters" do
       it "returns status code unprocessable entity" do
-        patch "/projects/1", params: {
+        patch "/admin/projects/1", params: {
           project: {
             name: "",
             description: ""
